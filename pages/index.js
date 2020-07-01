@@ -1,209 +1,222 @@
-import Head from 'next/head'
+import CustomAppBar from "../src/CustomAppBar";
+import Navigation from "../src/Navigation";
+import {
+	Container,
+	Grid,
+	Typography,
+	makeStyles,
+	Divider,
+	Button,
+} from "@material-ui/core";
+import Link from "../src/Link";
+import Footer from "../src/Footer";
+import { Fade } from "react-slideshow-image";
+import { ArrowForward } from "@material-ui/icons";
+const useStyles = makeStyles((theme) => ({
+	content: { padding: theme.spacing(4, 0) },
+	contentImage: {
+		float: "left",
+		height: 200,
+		margin: theme.spacing(0, 2, 2, 0),
+		[theme.breakpoints.down("xs")]: {
+			width: "95vw",
+			height: "auto",
+			margin: theme.spacing(0, 0, 2, 0),
+		},
+	},
+	section: {
+		margin: theme.spacing(2, 0),
+	},
+	sliderImage: {
+		height: "85vh",
+		width: "100%",
+		objectFit: "cover",
+		opacity: "0.5",
+	},
+	slide: {
+		height: "82vh",
+		width: "100%",
+	},
+	slideContainer: {
+		height: "80vh",
+		width: "100%",
+		"& .MuiLink-underlineHover:hover": {
+			textDecoration: "none",
+		},
+	},
+	heroTextHolder: {
+		display: "flex",
+		flexDirection: "column",
+		position: "absolute",
+		textAlign: "center",
+		alignItems: "center",
+		width: "100%",
+		top: 200,
+		[theme.breakpoints.down("sm")]: {
+			top: 150,
+			padding: theme.spacing(0, 1),
+		},
+	},
+	heroTitle: {
+		fontSize: 40,
+		fontWeight: 700,
+		fontFamily: "Poppins",
+		textTransform: "uppercase",
+		[theme.breakpoints.down("xs")]: {
+			fontSize: 30,
+		},
+	},
+	heroContent: {
+		fontFamily: "Poppins",
+		textTransform: "uppercase",
+		[theme.breakpoints.down("xs")]: {
+			fontSize: 13,
+		},
+	},
+	btn: {
+		width: 250,
+		borderRadius: 20,
+		margin: theme.spacing(2, 0),
+	},
+}));
+const slideImages = [
+	{
+		image: "/images/slider/1.jpg",
+		title: "Solve the challenges of tomorrow",
+		content:
+			"With technology, administration and management degree programs impart with technology",
+	},
+	{
+		image: "/images/slider/2.jpg",
+		title: "EARN THE NEWEST CERTIFICATION IN TECHNOLOGY",
+		content: "from a college with innovation at its core",
+	},
+	{
+		image: "/images/slider/3.jpg",
+		title: "INNOVATIVE DEGREE FOR AN EVOLVING BUSINESS WORLD",
+		content: "",
+	},
+];
 
+const fadeProperties = {
+	duration: 5000,
+	transitionDuration: 1000,
+	infinite: true,
+	pauseOnHover: true,
+};
 export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+	const classes = useStyles();
+	return (
+		<div>
+			<CustomAppBar />
+			<Navigation value={0} />
+			<div className={classes.slideContainer}>
+				<Fade {...fadeProperties}>
+					{slideImages.map((_) => (
+						<div className={classes.slide} key={_.image}>
+							<div className='image-container'>
+								<img
+									src={_.image}
+									alt={_.image}
+									className={classes.sliderImage}
+								/>
+							</div>
+							<div className={classes.heroTextHolder}>
+								<div style={{ height: 150 }}>
+									<Typography className={classes.heroTitle}>
+										{_.title}
+									</Typography>
+									<Typography className={classes.heroContent} variant='h6'>
+										{_.content}
+									</Typography>
+								</div>
+								<Button
+									variant='contained'
+									color='secondary'
+									size='large'
+									className={classes.btn}
+									component={Link}
+									href='/registration'
+									endIcon={<ArrowForward />}>
+									Apply Online Now
+								</Button>
+							</div>
+						</div>
+					))}
+				</Fade>
+			</div>
+			<Container maxWidth='md'>
+				<Grid
+					container
+					spacing={2}
+					direction='row-reverse'
+					className={classes.content}>
+					<Grid item xs={12} sm={4} style={{ textAlign: "center" }}>
+						<img
+							src='/images/poster.jpg'
+							alt='poster'
+							style={{ height: 450, borderRadius: 15 }}
+						/>
+					</Grid>
+					<Grid item xs={12} sm={8}>
+						{/* Articles */}
+						<div className={classes.section}>
+							<Typography variant='h5'>
+								GET A CHANCE TO BE CERTIFIED BY MICROSOFT
+							</Typography>
+							<br />
+							<Divider />
+							<br />
+							<Typography variant='body2' style={{ textAlign: "justify" }}>
+								<img
+									src='/images/microsoft.jpg'
+									alt='microsoft'
+									className={classes.contentImage}
+								/>
+								At this current generation, you probably heard about the
+								Microsoft, a company provide desktop application tools and
+								desktop graphical operating system for desktop computers and
+								laptop computers. Microsoft is also a leading company that
+								provides not only programs but also training to individuals who
+								wants to enhance their skills in computer operation and other
+								computer skills by the use of Microsoft applications. In this
+								process Microsoft provides a chance and a privilege to every
+								individuals to obtain certifications that recognize by them and
+								by other companies world wide. At DATAMEX-College of St.
+								Adeline, we believe its critically important to have Microsoft
+								certifications to help today's individuals to be more competent
+								and achieve international standards in computer skills. That is
+								why we've put technology at the centre of everything we do
+								through unique teaching approaches and integrating technology in
+								our different programs. As the Microsoft Partner,
+								DATAMEX-College of St. Adeline are proud to offer a chance for
+								every students to gain Microsoft Certification and help our
+								students stand out with rightful skills employers are searching
+								for to help move their business forward their goals.
+							</Typography>
+						</div>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+						<div className={classes.section}>
+							<Typography variant='h5'>
+								WALK-IN AND ONLINE RESERVATION
+							</Typography>
+							<br />
+							<Divider />
+							<br />
+							<Typography variant='body2' style={{ textAlign: "justify" }}>
+								You can visit us at our main branch in 85 Commonwealth Ave. East
+								Park Subd. Fairview, Quezon City for your onsite or walk-in
+								reservation or you can call us at (02)9218350 and also you can
+								go through our online reservation by clicking the above apply
+								online or <Link href='/registration'>click here</Link>, And in
+								addition you can <Link href='/contact'>click here</Link> for the
+								other branches near in your place.
+							</Typography>
+						</div>
+					</Grid>
+				</Grid>
+			</Container>
+			<Footer />
+		</div>
+	);
 }

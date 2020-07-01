@@ -8,8 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "clsx": "^1.1.1",
+    "framer-motion": "^1.11.1",
     "next": "9.4.4",
+    "prop-types": "^15.7.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-alice-carousel": "^1.19.3",
+    "react-awesome-slider": "^4.1.0",
+    "react-dom": "16.13.1",
+    "react-progressive-image": "^0.6.0",
+    "react-slideshow-image": "^2.0.1"
   }
 }
