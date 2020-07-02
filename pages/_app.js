@@ -4,7 +4,6 @@ import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/theme";
-import "react-alice-carousel/lib/alice-carousel.css";
 import "react-slideshow-image/dist/styles.css";
 export default function MyApp(props) {
 	const { Component, pageProps } = props;

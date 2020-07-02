@@ -44,7 +44,7 @@ function College() {
 						</Typography>
 
 						{courses.map((_) => (
-							<Accordion>
+							<Accordion key={_.title}>
 								<AccordionSummary expandIcon={<ExpandMore />}>
 									<Typography>{_.title}</Typography>
 								</AccordionSummary>
@@ -67,7 +67,7 @@ function College() {
 										</Typography>
 										<ul>
 											{_.subjects.map((subject) => (
-												<li>
+												<li key={subject}>
 													<Typography variant='body2'>{subject}</Typography>
 												</li>
 											))}
@@ -81,7 +81,7 @@ function College() {
 										</Typography>
 										<ul>
 											{_.careers.map((career) => (
-												<li>
+												<li key={career}>
 													<Typography variant='body2'>{career}</Typography>
 												</li>
 											))}

@@ -263,16 +263,151 @@ export const branches = [
 			"85 Commonwealth Ave, Greater Fairview, Quezon City, 1118 Metro Manila",
 		phone: "(02) 921 8350",
 		email: "stadeline@yahoo.com.ph",
+		coordinates: [14.7048967, 121.0755882],
 	},
 	{
 		branch: "Valenzuela ",
 		address:
 			" 2nd flr. Gotaco Bldg 2, 32 MacArthur Highway, Valenzuela, 1440 Metro Manila",
 		phone: "(02) 292 7536 ",
+		coordinates: [14.67695, 120.98064],
 	},
 	{
 		branch: "Meycauayan  ",
 		address: "85 Requino St, Saluysoy, Meycauayan, 3023 Bulacan",
 		phone: " 579-4372  ",
+		coordinates: [14.79062, 121.00579],
+	},
+];
+
+export const news = [
+	{
+		thumbnail: "https://i.imgur.com/O8rodpgt.png",
+		title: "We are now Certiport Accredited Center",
+		link: "/partners",
+	},
+	{
+		thumbnail: "https://i.imgur.com/nFZqpyct.png",
+		title: "Be Microsoft Cerfitied Professional",
+		link: "/partners",
+	},
+];
+
+export const facilities = [
+	{
+		title: "Laboratory",
+		desc:
+			"DCSA provides high quality computers or terminals for indemands computer programs and applications",
+		images: [
+			{
+				img: "https://i.imgur.com/p7JVIr2.jpg",
+				thumbnail: "https://i.imgur.com/p7JVIr2t.jpg",
+			},
+			{
+				img: "https://i.imgur.com/VbgL6F8.jpg",
+				thumbnail: "https://i.imgur.com/VbgL6F8t.jpg",
+			},
+		],
+	},
+	{
+		title: "Kitchen",
+		desc:
+			"DCSA provides high quality kitchen facility and materials for culinary activities. ",
+		images: [
+			{
+				img: "https://i.imgur.com/Sq6rCvY.jpg",
+				thumbnail: "https://i.imgur.com/Sq6rCvYt.jpg",
+			},
+			{
+				img: "https://i.imgur.com/UtH27yh.jpg",
+				thumbnail: "https://i.imgur.com/UtH27yht.jpg",
+			},
+		],
+	},
+	{
+		title: "Physics Lab",
+		desc:
+			"DCSA provides comprehensive Physics Laboratory for Science Activities. ",
+		images: [
+			{
+				img: "https://i.imgur.com/DBLPKYM.jpg",
+				thumbnail: "https://i.imgur.com/DBLPKYMt.jpg",
+			},
+			{
+				img: "https://i.imgur.com/2f5N0TO.jpg",
+				thumbnail: "https://i.imgur.com/2f5N0TOt.jpg",
+			},
+		],
+	},
+	{
+		title: "Chemistry Lab",
+		desc:
+			"DCSA provides comprehensive Chemistry Laboratory for Science Experimentation. ",
+		images: [
+			{
+				img: "https://i.imgur.com/U9dPcDJ.jpg",
+				thumbnail: "https://i.imgur.com/U9dPcDJt.jpg",
+			},
+			{
+				img: "https://i.imgur.com/jmB15i1.jpg",
+				thumbnail: "https://i.imgur.com/jmB15i1t.jpg",
+			},
+		],
+	},
+	{
+		title: "Library",
+		desc:
+			"DCSA gives the students a quality and world wide standard Library for them to feel again the essences of research.",
+		images: [
+			{
+				img: "https://i.imgur.com/jj0KC2a.jpg",
+				thumbnail: "https://i.imgur.com/jj0KC2at.jpg",
+			},
+			{
+				img: "https://i.imgur.com/6LvsJp9.jpg",
+				thumbnail: "https://i.imgur.com/6LvsJp9t.jpg",
+			},
+		],
+	},
+	{
+		title: "Bar",
+		desc:
+			"DCSA provides an international like cruise ship bar for aspiring Bartender.",
+		images: [
+			{
+				img: "https://i.imgur.com/Xz7oLD0.jpg",
+				thumbnail: "https://i.imgur.com/Xz7oLD0t.jpg",
+			},
+		],
+	},
+	{
+		title: "Lounge",
+		desc: "DCSA provides a quality lounge like 5 star hotel.",
+		images: [
+			{
+				img: "https://i.imgur.com/K49wOut.jpg",
+				thumbnail: "https://i.imgur.com/K49wOutt.jpg",
+			},
+		],
+	},
+	{
+		title: "House Keeping Room",
+		desc: "DCSA provides a quality facility for House Keeping Training.",
+		images: [
+			{
+				img: "https://i.imgur.com/lRTYpJ6.jpg",
+				thumbnail: "https://i.imgur.com/lRTYpJ6t.jpg",
+			},
+		],
+	},
+	{
+		title: "Suite Room",
+		desc: "DCSA provides a quality Suite Room.",
+		images: [
+			{
+				img: "https://i.imgur.com/jCZnQyu.jpg",
+				thumbnail: "https://i.imgur.com/jCZnQyut.jpg",
+			},
+		],
 	},
 ];

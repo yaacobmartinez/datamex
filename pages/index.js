@@ -12,6 +12,7 @@ import Link from "../src/Link";
 import Footer from "../src/Footer";
 import { Fade } from "react-slideshow-image";
 import { ArrowForward } from "@material-ui/icons";
+import ProgressiveImage from "react-progressive-image";
 const useStyles = makeStyles((theme) => ({
 	content: { padding: theme.spacing(4, 0) },
 	contentImage: {
@@ -81,18 +82,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 const slideImages = [
 	{
-		image: "/images/slider/1.jpg",
+		image: "https://i.imgur.com/OZQ3PvU.jpg",
+		small: "https://i.imgur.com/OZQ3PvUt.jpg",
 		title: "Solve the challenges of tomorrow",
 		content:
 			"With technology, administration and management degree programs impart with technology",
 	},
 	{
-		image: "/images/slider/2.jpg",
+		image: "https://i.imgur.com/a6iBuJA.jpg",
+		small: "https://i.imgur.com/a6iBuJAt.jpg",
 		title: "EARN THE NEWEST CERTIFICATION IN TECHNOLOGY",
 		content: "from a college with innovation at its core",
 	},
 	{
-		image: "/images/slider/3.jpg",
+		image: "https://i.imgur.com/87SZEpA.jpg",
+		small: "https://i.imgur.com/87SZEpAt.jpg",
 		title: "INNOVATIVE DEGREE FOR AN EVOLVING BUSINESS WORLD",
 		content: "",
 	},
@@ -115,11 +119,16 @@ export default function Home() {
 					{slideImages.map((_) => (
 						<div className={classes.slide} key={_.image}>
 							<div className='image-container'>
-								<img
-									src={_.image}
-									alt={_.image}
-									className={classes.sliderImage}
-								/>
+								<ProgressiveImage src={_.image} placeholder={_.small}>
+									{(src) => (
+										<img
+											src={src}
+											className={classes.sliderImage}
+											alt={_.title}
+										/>
+									)}
+								</ProgressiveImage>
+								<img src={_.image} alt={_.image} />
 							</div>
 							<div className={classes.heroTextHolder}>
 								<div style={{ height: 150 }}>
@@ -152,11 +161,17 @@ export default function Home() {
 					direction='row-reverse'
 					className={classes.content}>
 					<Grid item xs={12} sm={4} style={{ textAlign: "center" }}>
-						<img
-							src='/images/poster.jpg'
-							alt='poster'
-							style={{ height: 450, borderRadius: 15 }}
-						/>
+						<ProgressiveImage
+							src='https://i.imgur.com/i0FUDPg.jpg'
+							placeholder='https://i.imgur.com/i0FUDPgt.jpg'>
+							{(src) => (
+								<img
+									src={src}
+									alt='poster'
+									style={{ height: 450, borderRadius: 15 }}
+								/>
+							)}
+						</ProgressiveImage>
 					</Grid>
 					<Grid item xs={12} sm={8}>
 						{/* Articles */}
@@ -168,11 +183,17 @@ export default function Home() {
 							<Divider />
 							<br />
 							<Typography variant='body2' style={{ textAlign: "justify" }}>
-								<img
-									src='/images/microsoft.jpg'
-									alt='microsoft'
-									className={classes.contentImage}
-								/>
+								<ProgressiveImage
+									src='https://i.imgur.com/nnXQpdF.jpg'
+									placeholder='https://i.imgur.com/nnXQpdFt.jpg'>
+									{(src) => (
+										<img
+											src={src}
+											alt='microsoft'
+											className={classes.contentImage}
+										/>
+									)}
+								</ProgressiveImage>
 								At this current generation, you probably heard about the
 								Microsoft, a company provide desktop application tools and
 								desktop graphical operating system for desktop computers and

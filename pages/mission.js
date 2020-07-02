@@ -9,7 +9,7 @@ import {
 	Typography,
 	Divider,
 } from "@material-ui/core";
-
+import Facebook from "../src/Facebook";
 const useStyles = makeStyles((theme) => ({
 	root: { padding: theme.spacing(4, 1) },
 }));
@@ -158,6 +158,9 @@ function Mission() {
 						<Typography style={{ fontStyle: "italic" }}>
 							Will be marked in history
 						</Typography>
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Facebook />
 					</Grid>
 				</Grid>
 			</Container>

@@ -15,7 +15,7 @@ import {
 import { ExpandMore } from "@material-ui/icons";
 import LatestNews from "../src/LatestNews";
 const useStyles = makeStyles((theme) => ({
-	root: { padding: theme.spacing(4, 0) },
+	root: { padding: theme.spacing(4, 1) },
 }));
 const steps = [
 	{
