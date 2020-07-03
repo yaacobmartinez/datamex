@@ -140,6 +140,7 @@ export default function Home() {
 									</Typography>
 								</div>
 								<Button
+									aria-label='Apply Online Now'
 									variant='contained'
 									color='secondary'
 									size='large'
@@ -229,9 +230,10 @@ export default function Home() {
 								Park Subd. Fairview, Quezon City for your onsite or walk-in
 								reservation or you can call us at (02)9218350 and also you can
 								go through our online reservation by clicking the above apply
-								online or <Link href='/registration'>click here</Link>, And in
-								addition you can <Link href='/contact'>click here</Link> for the
-								other branches near in your place.
+								online go to our <Link href='/registration'>Registration</Link>{" "}
+								page, and in addition you can go to{" "}
+								<Link href='/contact'>Contacts</Link> for the other branches
+								near in your place.
 							</Typography>
 						</div>
 					</Grid>

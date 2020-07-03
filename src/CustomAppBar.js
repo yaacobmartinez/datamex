@@ -76,6 +76,7 @@ function CustomAppBar() {
 								</div>
 							</div>
 							<Button
+								aria-label='Apply Online'
 								variant='contained'
 								color='secondary'
 								component={Link}
